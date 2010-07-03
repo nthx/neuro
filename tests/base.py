@@ -4,8 +4,9 @@ log = logging.getLogger(__name__)
 
 import unittest
 import sys
-from lib import selenium
-import re
+
+from model.board import Board
+
 
 
 class BaseTest(unittest.TestCase):
