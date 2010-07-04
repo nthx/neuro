@@ -15,5 +15,6 @@ from model.board import Board
 if __name__ == "__main__":
     log.debug("Heeeya!")
 
-    b = Board()
+    board = Board()
+    
 
