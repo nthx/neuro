@@ -30,7 +30,7 @@ class Player(object):
             pass
             
         elif (Army.MAX_PAWNS - 0) == len(self.pawns_deck):
-            picked.append(self.take_pawn_from_deck(self.take_base_from_deck()))
+            picked.append(self.take_pawn_from_deck(self.take_hq_from_deck()))
         
         elif (Army.MAX_PAWNS - 1) == len(self.pawns_deck):
             picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
@@ -58,8 +58,8 @@ class Player(object):
         return pawn
         
         
-    def take_base_from_deck(self):
-        result = filter(lambda pawn: pawn.is_base(), self.pawns_deck)
+    def take_hq_from_deck(self):
+        result = filter(lambda pawn: pawn.is_hq(), self.pawns_deck)
         return result and result[0] or None
         
         

@@ -90,7 +90,7 @@ class Board(object):
 
             
     def _do_move(self, player, move):
-        if move.pawn.is_base() or move.pawn.is_soldier() or move.pawn.is_module():
+        if move.pawn.is_hq() or move.pawn.is_soldier() or move.pawn.is_module():
             available_hex = self.any_empty_hex()
             available_hex.put(move.pawn)
         

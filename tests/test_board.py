@@ -53,8 +53,8 @@ class Test(BaseTest):
         self.assertEqual(Army.MAX_PAWNS, len(computer.army.pawns))
         self.assertNotEqual(human.army, computer.army)
         
-        self.assertTrue(human.army.p_base())
-        self.assertTrue(computer.army.p_base())
+        self.assertTrue(human.army.p_hq())
+        self.assertTrue(computer.army.p_hq())
 
         
     def test_05_moves(self):
@@ -63,7 +63,6 @@ class Test(BaseTest):
         
         self.assertEqual(1, len(board.moves))
         self.assertEqual(1, len(board.pawns()))
-        self.assertEqual('green', board.pawns()[0].color())
         
         
         

@@ -28,7 +28,7 @@ class Hex(object):
         if self.pawns:
             return '%(pawn)s' % {
                 'army': self.pawns[0].army.name,
-                'pawn': self.pawns[0].name
+                'pawn': self.pawns[0].get_name()
             }
         else:
             return ''

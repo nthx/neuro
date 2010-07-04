@@ -8,8 +8,8 @@ class Pawn(object):
         self.name = name
         self.army = army
         
-    def is_base(self):
-        return 'base' == self.name
+    def is_hq(self):
+        return 'hq' == self.name
         
     def is_soldier(self):
         return self.name in ['soldier']
@@ -21,5 +21,13 @@ class Pawn(object):
         return self.name in ['battle', 'move', 'sniper']
         
     def color(self):
-        return self.army.color
+        if self.is_hq():
+            return self.army.hq_color
+        else:
+            return self.army.color
     
+    def get_name(self):
+        if self.is_hq():
+            return 'HQ'
+        else:
+            return self.name
