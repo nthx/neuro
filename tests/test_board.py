@@ -59,23 +59,11 @@ class Test(BaseTest):
         
     def test_05_moves(self):
         board = Board()
-        board.print_graph()
-
-        board.make_move(board.computer())
+        board.player_turn(board.computer())
         
         self.assertEqual(1, len(board.moves))
         self.assertEqual(1, len(board.pawns()))
         self.assertEqual('green', board.pawns()[0].color())
         
-        board.print_graph()
-
-        board.make_move(board.computer())
-        board.print_graph()
-
-        board.make_move(board.computer())
-        board.print_graph()
-
-        board.make_move(board.computer())
-        board.print_graph()
         
         

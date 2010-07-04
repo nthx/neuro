@@ -82,17 +82,21 @@ class Board(object):
         return [x for x in self.players if x.is_human()][0]
         
         
-    def make_move(self, player):
-        moves = player.make_move()
+    def player_turn(self, player):
+        moves = player.my_turn()
         
         for move in moves:
             self._do_move(player, move)
 
             
     def _do_move(self, player, move):
-        #TODO: fake impl
-        available_hex = self.any_empty_hex()
-        available_hex.put(move.pawn)
+        if move.pawn.is_base() or move.pawn.is_soldier() or move.pawn.is_module():
+            available_hex = self.any_empty_hex()
+            available_hex.put(move.pawn)
+        
+        elif move.pawn.is_immediate():
+            pass
+            
         self.moves.append(move)
         player.move_made(move)
         
@@ -108,38 +112,44 @@ class Board(object):
         
     def print_graph(self):
         import matplotlib.pyplot as plt
-        nx.draw(
-            self.graph, 
+        a=0.2
+        b=0.4
+        c=0.6
+        d=0.8
+        a = b = c = d = 0
+        x = 0.4
+        y = 1.2
+        
+        plt.figure(figsize=(7,7))
+      
+        nx.draw_networkx(
+            self.graph,
+            node_shape='h',
             pos={
-                self.hex('A1'): (3, -0),
-                self.hex('A2'): (5, -0.2),
-                self.hex('A3'): (7, -0.4),
-                self.hex('B1'): (2, -1),
-                self.hex('B2'): (4, -1.2),
-                self.hex('B3'): (6, -1.4),
-                self.hex('B4'): (8, -1.6),
-                self.hex('C1'): (1, -2),
-                self.hex('C2'): (3, -2.2),
-                self.hex('C3'): (5, -2.4),
-                self.hex('C4'): (7, -2.6),
-                self.hex('C5'): (9, -2.8),
-                self.hex('D1'): (2, -3),
-                self.hex('D2'): (4, -3.2),
-                self.hex('D3'): (6, -3.4),
-                self.hex('D4'): (8, -3.6),
-                self.hex('E1'): (3, -4),
-                self.hex('E2'): (5, -4.2),
-                self.hex('E3'): (7, -4.4),
+                self.hex('A1'): (1+2*x, -0),
+                self.hex('A2'): (1+4*x, -0-a),
+                self.hex('A3'): (1+6*x, -0-b),
+                self.hex('B1'): (1+1*x, -1*y),
+                self.hex('B2'): (1+3*x, -1*y-a),
+                self.hex('B3'): (1+5*x, -1*y-b),
+                self.hex('B4'): (1+7*x, -1*y-c),
+                self.hex('C1'): (1+0*x, -2*y),
+                self.hex('C2'): (1+2*x, -2*y-a),
+                self.hex('C3'): (1+4*x, -2*y-b),
+                self.hex('C4'): (1+6*x, -2*y-c),
+                self.hex('C5'): (1+8*x, -2*y-d),
+                self.hex('D1'): (1+1*x, -3*y),
+                self.hex('D2'): (1+3*x, -3*y-a),
+                self.hex('D3'): (1+5*x, -3*y-b),
+                self.hex('D4'): (1+7*x, -3*y-c),
+                self.hex('E1'): (1+2*x, -4*y),
+                self.hex('E2'): (1+4*x, -4*y-a),
+                self.hex('E3'): (1+6*x, -4*y-b),
             }, 
             with_labels=True,
-            node_color=[hex.color() for hex in sorted(self.hexes.values(), key=lambda hex: hex.name)])
-        #node_size=40,
-        #     node_color=c,
-        #     vmin=0.0,
-        #     vmax=1.0,
-        #     with_labels=False
-        
-        
+            node_color=[hex.color() for hex in self.graph],
+            node_size=5000)
+
         filename = 'screenshots/board-%s.png' % str(len(self.moves)).rjust(3, '0')
         plt.savefig(filename)
 

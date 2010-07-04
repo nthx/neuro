@@ -2,29 +2,17 @@
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshots/board-000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/player.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_sample_game.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_board.py" afterPath="$PROJECT_DIR$/tests/test_board.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshots/board-000.png" afterPath="$PROJECT_DIR$/screenshots/board-000.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuro.iws" afterPath="$PROJECT_DIR$/neuro.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/pawn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run_tests.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/util/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/army.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuro.ipr" afterPath="$PROJECT_DIR$/neuro.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pawn.py" afterPath="$PROJECT_DIR$/model/pawn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/board.py" afterPath="$PROJECT_DIR$/model/board.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/player.py" afterPath="$PROJECT_DIR$/model/player.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/hex.py" afterPath="$PROJECT_DIR$/model/hex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/base.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/util/text.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/move.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshots/board-000.png" afterPath="$PROJECT_DIR$/screenshots/board-000.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/army.py" afterPath="$PROJECT_DIR$/model/army.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/base.py" afterPath="$PROJECT_DIR$/tests/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pawn.py" afterPath="$PROJECT_DIR$/model/pawn.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/move.py" afterPath="$PROJECT_DIR$/model/move.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/hex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_sample_game.py" afterPath="$PROJECT_DIR$/tests/test_sample_game.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Neuro.iml" afterPath="$PROJECT_DIR$/Neuro.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.sh" afterPath="$PROJECT_DIR$/run_tests.sh" />
     </list>
     <ignored path="neuro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,10 +71,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_board.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+      <file leaf-file-name="test_sample_game.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_sample_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="2251" selection-end="2251" vertical-scroll-proportion="0.0">
+            <state line="9" column="18" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,7 +83,7 @@
       <file leaf-file-name="board.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/board.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="37" selection-start="3874" selection-end="3874" vertical-scroll-proportion="0.63203466">
+            <state line="92" column="82" selection-start="2998" selection-end="2998" vertical-scroll-proportion="0.5151515">
               <folding />
             </state>
           </provider>
@@ -104,7 +92,16 @@
       <file leaf-file-name="player.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="36" selection-start="2115" selection-end="2115" vertical-scroll-proportion="0.0">
+            <state line="73" column="15" selection-start="2442" selection-end="2442" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_board.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="14" selection-start="2139" selection-end="2139" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,7 +110,7 @@
       <file leaf-file-name="hex.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/hex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="19" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+            <state line="33" column="20" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,7 +119,7 @@
       <file leaf-file-name="pawn.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/pawn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="30" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+            <state line="19" column="8" selection-start="413" selection-end="425" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,6 +148,20 @@
   </component>
   <component name="ProjectPane">
     <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="neuro" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Neuro" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="neuro" />
@@ -236,10 +247,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="dist-packages" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="classes" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -331,16 +338,16 @@
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonUnitTestConfigurationType" factoryName="Python's unittest">
@@ -375,7 +382,7 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false" runner="emma">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -496,7 +503,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48507464" sideWeight="0.5" order="1" side_tool="false" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48472223" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
@@ -507,7 +514,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40749148" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39927536" sideWeight="0.5" order="0" side_tool="false" x="284" y="61" width="352" height="646" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23768117" sideWeight="0.5" order="0" side_tool="false" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23768117" sideWeight="0.50555557" order="0" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" />
@@ -548,27 +555,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -625,37 +611,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/pawn.py">
+    <entry file="file:///usr/local/lib/python2.6/dist-packages/networkx-1.2.dev-py2.6.egg/networkx/drawing/nx_pylab.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+        <state line="189" column="33" selection-start="5295" selection-end="5305" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+    <entry file="file://$PROJECT_DIR$/run_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2251" selection-end="2251" vertical-scroll-proportion="0.0">
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_sample_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/pawn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="8" selection-start="413" selection-end="425" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/hex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="19" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+        <state line="33" column="20" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="14" selection-start="2139" selection-end="2139" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="36" selection-start="2115" selection-end="2115" vertical-scroll-proportion="0.0">
+        <state line="73" column="15" selection-start="2442" selection-end="2442" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="37" selection-start="3874" selection-end="3874" vertical-scroll-proportion="0.63203466">
+        <state line="92" column="82" selection-start="2998" selection-end="2998" vertical-scroll-proportion="0.5151515">
           <folding />
         </state>
       </provider>

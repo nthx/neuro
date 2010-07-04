@@ -11,6 +11,15 @@ class Pawn(object):
     def is_base(self):
         return 'base' == self.name
         
+    def is_soldier(self):
+        return self.name in ['soldier']
+        
+    def is_module(self):
+        return self.name in ['module']
+        
+    def is_immediate(self):
+        return self.name in ['battle', 'move', 'sniper']
+        
     def color(self):
         return self.army.color
     

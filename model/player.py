@@ -24,29 +24,32 @@ class Player(object):
         
         
     def pick_pawns(self):
+        log.debug('%s: pick_pawns', self.name)
         picked = []
         if 0 == len(self.pawns_deck):
             pass
             
         elif (Army.MAX_PAWNS - 0) == len(self.pawns_deck):
-            picked.append(self.pick_pawn(self.pick_base()))
+            picked.append(self.take_pawn_from_deck(self.take_base_from_deck()))
         
         elif (Army.MAX_PAWNS - 1) == len(self.pawns_deck):
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
             
         elif (Army.MAX_PAWNS - 2) == len(self.pawns_deck):
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
             
         else:
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
-            picked.append(self.pick_pawn(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
+            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
             
-        return [pawn for pawn in picked if pawn is not None]
+        picked = [pawn for pawn in picked if pawn is not None]
+        log.debug(picked)
+        return picked
             
             
-    def pick_pawn(self, pawn):
+    def take_pawn_from_deck(self, pawn):
         if len(self.pawns_hand) >= 3:
             raise Exception('CantHaveMoreThan3OInHand')
         
@@ -55,13 +58,21 @@ class Player(object):
         return pawn
         
         
-    def pick_base(self):
+    def take_base_from_deck(self):
         result = filter(lambda pawn: pawn.is_base(), self.pawns_deck)
         return result and result[0] or None
         
         
-    def make_move(self):
-        pass
+    def my_turn(self):
+        pawns = self.pick_pawns()
+        if len(pawns) > 2:
+            to_throw_away = random.choice(pawns)
+            pawns.remove(to_throw_away)
+            self.pawns_hand.remove(to_throw_away)
+            
+        for pawn in pawns:
+            yield Move(pawn)
+        
 
     def move_made(self, move):
         self.pawns_hand.remove(move.pawn)
@@ -93,15 +104,4 @@ class ComputerPlayer(Player):
     def is_computer(self):
         return True
         
-    def make_move(self):
-        pawns = self.pick_pawns()
-        if len(pawns) > 2:
-            pawns.remove(random.choice(pawns))
-            
-        for pawn in pawns:
-            yield Move(pawn)
-        
-        
-
-
     

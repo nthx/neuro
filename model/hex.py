@@ -17,7 +17,7 @@ class Hex(object):
         
     def color(self):
         if self.is_empty():
-            return 'pink'
+            return 'white'
         else:
             return self.pawns[0].color()
         
@@ -26,12 +26,12 @@ class Hex(object):
         
     def __repr__(self):
         if self.pawns:
-            return '%(army)s <%(pawn)s>' % {
+            return '%(pawn)s' % {
                 'army': self.pawns[0].army.name,
                 'pawn': self.pawns[0].name
             }
         else:
-            return 'Hex'
+            return ''
         #return model_repr(self, attrs=['name'])
         
         
