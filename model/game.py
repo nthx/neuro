@@ -43,11 +43,11 @@ class Game(object):
 
             
     def _do_move(self, player, move):
-        if move.pawn.is_hq() or move.pawn.is_soldier() or move.pawn.is_module():
+        if move.pawn.can_be_put_on_board:
             available_hex = self.board.any_empty_hex()
             available_hex.put(move.pawn)
         
-        elif move.pawn.is_immediate():
+        elif move.pawn.is_immediate:
             pass
             
         self.moves.append(move)

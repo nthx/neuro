@@ -59,7 +59,7 @@ class Player(object):
         
         
     def take_hq_from_deck(self):
-        result = filter(lambda pawn: pawn.is_hq(), self.pawns_deck)
+        result = filter(lambda pawn: pawn.am_hq(), self.pawns_deck)
         return result and result[0] or None
         
         

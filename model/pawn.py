@@ -4,30 +4,77 @@ log = logging.getLogger(__name__)
 
 
 class Pawn(object):
-    def __init__(self, name, army):
-        self.name = name
+    def __init__(self, army):
         self.army = army
         
-    def is_hq(self):
-        return 'hq' == self.name
-        
-    def is_soldier(self):
-        return self.name in ['soldier']
-        
-    def is_module(self):
-        return self.name in ['module']
-        
-    def is_immediate(self):
-        return self.name in ['battle', 'move', 'sniper']
-        
+        #do not modify defaults
+        self.is_immediate = False
+        self.can_be_put_on_board = False
+
     def color(self):
-        if self.is_hq():
-            return self.army.hq_color
-        else:
-            return self.army.color
+        return self.army.color
     
     def get_name(self):
-        if self.is_hq():
-            return 'HQ'
-        else:
-            return self.name
+        return self.__class__.__name__.replace('Pawn', '').lower()
+        
+    def am_hq(self):
+        return False
+            
+            
+class HqPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+
+    def color(self):
+        return self.army.hq_color
+        
+    def get_name(self):
+        return 'HQ'
+
+    def am_hq(self):
+        return True
+    
+        
+class SoldierAPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        
+
+class SoldierBPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        
+
+class SoldierCPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        
+
+class SniperPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.is_immediate = True
+
+        
+class MoveRotatePawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.is_immediate = True
+
+        
+class BattlePawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.is_immediate = True
+
+        
+class MedicPawn(Pawn):
+    def __init__(self, army):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        
+        

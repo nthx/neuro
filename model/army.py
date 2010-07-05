@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import logging
-log = logging.getLogger(__name__)
 
 import random 
 
-from model.pawn import Pawn
+from model.pawn import *
+log = logging.getLogger(__name__) #define after '..pawn import *'
 
 
 
@@ -23,14 +23,14 @@ class Army(object):
         
     def create_random_army(self):
         if not self.p_hq():
-            self.pawns.append(Pawn('hq', self))
+            self.pawns.append(HqPawn(self))
             
         while len(self.pawns) < Army.MAX_PAWNS:   
-            self.pawns.append(random.choice([Pawn('soldier', self), Pawn('battle', self)]))
+            self.pawns.append(random.choice([SoldierAPawn(self), SoldierCPawn(self), SoldierCPawn(self), BattlePawn(self)]))
         
             
     def p_hq(self):
-        result = filter(lambda pawn: pawn.is_hq(), self.pawns)
+        result = filter(lambda pawn: pawn.am_hq(), self.pawns)
         return result and result[0] or None
         
         
