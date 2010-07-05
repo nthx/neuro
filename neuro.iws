@@ -6,8 +6,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_pawn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/base.py" afterPath="$PROJECT_DIR$/tests/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pawn.py" afterPath="$PROJECT_DIR$/model/pawn.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screenshots/board-016.png" afterPath="$PROJECT_DIR$/screenshots/board-016.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/action.py" />
     </list>
     <ignored path="neuro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +85,7 @@
       <file leaf-file-name="pawn.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/pawn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="26" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.3815029">
+            <state line="80" column="0" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.049132947">
               <folding />
             </state>
           </provider>
@@ -695,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/pawn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="26" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.3815029">
+        <state line="80" column="0" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.049132947">
           <folding />
         </state>
       </provider>

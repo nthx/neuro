@@ -78,9 +78,6 @@ class HqPawn(Pawn):
     def color(self):
         return self.army.hq_color
         
-    def get_name(self):
-        return 'HQ'
-
     def am_hq(self):
         return True
     
