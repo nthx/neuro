@@ -36,7 +36,7 @@ class Pawn(object):
         else:
             armor = '+%s' % self.extra_armor
             
-        for direction in self.actions:
+        for direction in sorted(self.actions):
             actions += '%s: ' % direction
             for action in self.actions[direction]:
                 actions += action.text_repr()

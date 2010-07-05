@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="63df93ba-93de-4ec4-a7e0-47019f8fbd44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuro.iws" afterPath="$PROJECT_DIR$/neuro.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_pawn.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/base.py" afterPath="$PROJECT_DIR$/tests/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pawn.py" afterPath="$PROJECT_DIR$/model/pawn.py" />
     </list>
     <ignored path="neuro.iws" />
@@ -85,8 +83,24 @@
       <file leaf-file-name="pawn.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/pawn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.049132947">
-              <folding />
+            <state line="38" column="45" selection-start="874" selection-end="874" vertical-scroll-proportion="0.7297688">
+              <folding>
+                <marker date="1278335116000" expanded="true" signature="194:416" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="447:469" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="507:3542" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="1386:1398" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="1455:1458" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="1642:1645" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2002:2027" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2066:2077" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2122:2125" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2353:2356" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2584:2587" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="2931:2934" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="3066:3069" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="3197:3200" placeholder="..." />
+                <marker date="1278335116000" expanded="true" signature="3327:3330" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -693,8 +707,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/pawn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.049132947">
-          <folding />
+        <state line="38" column="45" selection-start="874" selection-end="874" vertical-scroll-proportion="0.7297688">
+          <folding>
+            <marker date="1278335116000" expanded="true" signature="194:416" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="447:469" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="507:3542" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="1386:1398" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="1455:1458" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="1642:1645" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2002:2027" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2066:2077" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2122:2125" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2353:2356" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2584:2587" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="2931:2934" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="3066:3069" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="3197:3200" placeholder="..." />
+            <marker date="1278335116000" expanded="true" signature="3327:3330" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
