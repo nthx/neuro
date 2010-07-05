@@ -5,20 +5,16 @@ log = logging.getLogger(__name__)
 import networkx as nx
 import random
 
-from model.army import Army, POSTERUNEK, BORGO, HEGEMONIA, MOLOCH
 from model.hex import Hex
-from model.player import HumanPlayer, ComputerPlayer
 
 
 class Board(object):
-    def __init__(self):
+    def __init__(self, moves=[]):
         self.graph = nx.Graph()
         self.hexes = {}
-        self.moves = []
-        self.players = []
+        self.moves = moves #a reference to game's moves
         
         self.initialize_board()
-        self.initialize_players()
         
     
     def new_hex(self, name):
@@ -69,39 +65,9 @@ class Board(object):
         self.connect([('E2', 'E3')])
 
         
-    def initialize_players(self):
-        self.players.append(ComputerPlayer('Teddy', army=POSTERUNEK, board=self))
-        self.players.append(HumanPlayer('Tomasz', army=BORGO, board=self))
-
-        
-    def computer(self):
-        return [x for x in self.players if x.is_computer()][0]
-        
-        
-    def human(self):
-        return [x for x in self.players if x.is_human()][0]
-        
-        
-    def player_turn(self, player):
-        moves = player.my_turn()
-        
-        for move in moves:
-            self._do_move(player, move)
-
-            
-    def _do_move(self, player, move):
-        if move.pawn.is_hq() or move.pawn.is_soldier() or move.pawn.is_module():
-            available_hex = self.any_empty_hex()
-            available_hex.put(move.pawn)
-        
-        elif move.pawn.is_immediate():
-            pass
-            
-        self.moves.append(move)
-        player.move_made(move)
-        
     def any_empty_hex(self):
         return random.choice([hex for hex in self.graph.nodes() if hex.is_empty()])
+
         
     def pawns(self):
         pawns = []

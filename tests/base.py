@@ -7,6 +7,7 @@ import sys
 
 from model.army import Army
 from model.board import Board
+from model.game import Game
 
 
 

@@ -3,14 +3,14 @@ from tests.base import *
 
 class Test(BaseTest):
     def test_00_sample_play(self):
-        board = Board()
-        board.print_graph()
+        game = Game()
+        game.board.print_graph()
         
         for x in range(5):
-            board.player_turn(board.computer())
-            board.print_graph()
+            game.player_turn(game.computer())
+            game.board.print_graph()
         
-            board.player_turn(board.human())
-            board.print_graph()
+            game.player_turn(game.human())
+            game.board.print_graph()
         
     
