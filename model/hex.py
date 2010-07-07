@@ -32,7 +32,6 @@ class Hex(object):
             }
         else:
             return ''
-        #return model_repr(self, attrs=['name'])
         
         
                     

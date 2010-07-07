@@ -32,8 +32,8 @@ class Test(BaseTest):
         self.assertEqual(Army.MAX_PAWNS, len(computer.army.pawns))
         self.assertNotEqual(human.army, computer.army)
         
-        self.assertTrue(human.army.p_hq())
-        self.assertTrue(computer.army.p_hq())
+        self.assertTrue(human.army.get_hq())
+        self.assertTrue(computer.army.get_hq())
 
         
     def test_05_moves(self):

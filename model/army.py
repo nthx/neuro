@@ -22,22 +22,17 @@ class Army(object):
         
         
     def create_random_army(self):
-        if not self.p_hq():
+        if not self.get_hq():
             self.pawns.append(HqPawn(self))
             
         while len(self.pawns) < Army.MAX_PAWNS:   
-            self.pawns.append(random.choice([Runner(self), SoldierCPawn(self), SoldierCPawn(self), BattlePawn(self)]))
+            self.pawns.append(random.choice([RunnerPawn(self), MedicPawn(self), BattlePawn(self)]))
         
             
-    def p_hq(self):
+    def get_hq(self):
         result = filter(lambda pawn: pawn.am_hq(), self.pawns)
         return result and result[0] or None
         
-        
-    def p_soldier(self):
-        result = filter(lambda pawn: pawn.is_soldier(), self.pawns)
-        return result and random.choice(result) or None
-
         
     @classmethod
     def random(cls):
