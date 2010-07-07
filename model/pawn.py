@@ -13,7 +13,8 @@ class Pawn(object):
         #do not modify defaults
         self.is_immediate = False
         self.can_be_put_on_board = False
-
+        self.is_mobile = False
+        
         self.actions = {}
         self.initiative = None
         self.extra_armor = None
@@ -56,7 +57,7 @@ class Pawn(object):
         
     def action(self, direction, name):
         for action in self.actions.get(direction, []):
-            if name == action.name:
+            if name == action.name():
                 return action
         return NullAction()
         
@@ -65,14 +66,14 @@ class HqPawn(Pawn):
     def __init__(self, army):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
-        self.initiative = 0
+        self.initiative = [0]
         self.actions = {
-            'A': [Stab(1)],
-            'B': [Stab(1)],
-            'C': [Stab(1)],
-            'D': [Stab(1)],
-            'E': [Stab(1)],
-            'F': [Stab(1)]
+            'A': [Melee(1)],
+            'B': [Melee(1)],
+            'C': [Melee(1)],
+            'D': [Melee(1)],
+            'E': [Melee(1)],
+            'F': [Melee(1)]
         }
 
     def color(self):
@@ -86,9 +87,9 @@ class SoldierAPawn(Pawn):
     def __init__(self, army):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
-        self.initiative = 3
+        self.initiative = [3]
         self.actions = {
-            'B': [Shot(1)],
+            'B': [Range(1)],
         }
         
 
@@ -96,9 +97,9 @@ class SoldierBPawn(Pawn):
     def __init__(self, army):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
-        self.initiative = 3
+        self.initiative = [3]
         self.actions = {
-            'B': [Shot(2)],
+            'B': [Range(2)],
         }
         
 
@@ -106,10 +107,10 @@ class SoldierCPawn(Pawn):
     def __init__(self, army):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
-        self.initiative = 1
+        self.initiative = [1]
         self.actions = {
-            'A': [Shot(1), WhiteArmor()],
-            'B': [Stab(1), WhiteArmor()],
+            'A': [Range(1), WhiteArmor()],
+            'B': [Melee(1), WhiteArmor()],
             'F': [WhiteArmor()],
         }
         self.extra_armor = 1
@@ -132,7 +133,7 @@ class BattlePawn(Pawn):
         Pawn.__init__(self, army)
         self.is_immediate = True
 
-        
+
 class MedicPawn(Pawn):
     def __init__(self, army):
         Pawn.__init__(self, army)
@@ -143,4 +144,13 @@ class MedicPawn(Pawn):
             'E': [Heal()],
         }
         
-        
+
+class Runner(Pawn):
+    def __init__(self, army=None):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        self.actions = {
+            'A': [Melee(1)]
+        }
+        self.initiative = [2]
+        self.is_mobile = True
