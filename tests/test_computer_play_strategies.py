@@ -5,9 +5,7 @@ class Test(BaseTest):
     
     def test_00_different_strategies_available(self):
         game = Game()
-        
-        self.assertEqual(0, len(game.players))
-        self.assertEquals(0, len(game.moves))
+
         
         game.add_player(
             HumanPlayer('Monika', 

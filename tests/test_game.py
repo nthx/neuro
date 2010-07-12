@@ -5,7 +5,8 @@ class Test(BaseTest):
     
     def test_01_players(self):
         game = Game()
-        self.assertEqual(0, len(game.players))
+        self.assertEquals(0, len(game.players))
+        self.assertEquals(0, len(game.moves))
         
         game.add_player(ComputerPlayer('X-engine', OUTPOST, strategy=RandomStrategy()))
         game.add_player(HumanPlayer('Tomasz', BORGO))
