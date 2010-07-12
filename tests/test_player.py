@@ -8,7 +8,7 @@ class Test(BaseTest):
         
         self.assertEquals(Army.MAX_PAWNS, len(player.pawns_deck))
         self.assertEquals(0, len(player.pawns_board))
-        self.assertEquals(0, len(player.pawns_thrown))
+        self.assertEquals(0, len(player.pawns_discarded))
         self.assertEquals(0, len(player.pawns_hand))
         
         self.assertTrue(player.army is OUTPOST)
@@ -16,37 +16,24 @@ class Test(BaseTest):
         
         
     def test_01_player_can_take_up_to_3_pawns(self):
-        player = HumanPlayer('Tomcio', OUTPOST)
-        hq = player.take_hq_from_deck()
-        
-        self.assertTrue(hq)
-        self.assertEquals(Army.MAX_PAWNS-1, len(player.pawns_deck))
-        self.assertEquals(0, len(player.pawns_board))
-        self.assertEquals(0, len(player.pawns_thrown))
-        self.assertEquals(1, len(player.pawns_hand))
-        
-        
-        random1 = player.take_random_pawn()
-        self.assertTrue(random1)
-        self.assertEquals(Army.MAX_PAWNS-2, len(player.pawns_deck))
-        self.assertEquals(0, len(player.pawns_board))
-        self.assertEquals(0, len(player.pawns_thrown))
-        self.assertEquals(2, len(player.pawns_hand))
+        pass
 
         
-        random2 = player.take_random_pawn()
-        self.assertTrue(random2)
-        self.assertEquals(Army.MAX_PAWNS-3, len(player.pawns_deck))
-        self.assertEquals(0, len(player.pawns_board))
-        self.assertEquals(0, len(player.pawns_thrown))
-        self.assertEquals(3, len(player.pawns_hand))
+    def test_02_predefind_strategy_works(self):
+        human = HumanPlayer('Tomasz', OUTPOST )
 
-        try:
-            random3 = player.take_random_pawn()
-            self.fail('Player took 4th pawn in a turn. Not possible')
-        except:
-            pass
-            
+        human.strategy = PredefinedStrategy(
+            predefined_moves=[
+                [Move(human.pawn('hq'), 'E1', 'F')],
+                [Move(human.pawn('runner'), 'E2', 'B'), Discard(human.pawn('battle'))],
+                [Move(human.pawn('runner'), 'E3', 'C'), Discard(human.pawn('runner'))]
+            ]
+        )
         
+        human.my_turn()
         
+        self.assertEquals(0, len(human.pawns_hand))
+        self.assertEquals(Army.MAX_PAWNS - 1, len(human.pawns_deck))
+        self.assertEquals(0, len(human.pawns_discarded))
+        self.assertEquals(1, len(human.pawns_board))
         

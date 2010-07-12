@@ -27,12 +27,7 @@ class Test(BaseTest):
         
     def test_05_game_with_1_turns(self):
         game = Game()
-        game.add_player(
-            ComputerPlayer('X-engine', 
-                           OUTPOST, 
-                           strategy=RandomStrategy()
-            )
-        )
+        game.add_player( ComputerPlayer('X-engine', OUTPOST, strategy=RandomStrategy()))
         game.add_player(HumanPlayer('Tomasz', OUTPOST))
 
         human = game.human()
@@ -44,7 +39,7 @@ class Test(BaseTest):
         
         self.assertEquals(Army.MAX_PAWNS-1, len(computer.pawns_deck))
         self.assertEquals(1, len(computer.pawns_board))
-        self.assertEquals(0, len(computer.pawns_thrown))
+        self.assertEquals(0, len(computer.pawns_discarded))
         self.assertEquals(0, len(computer.pawns_hand))
         
         self.assertEquals(Army.MAX_PAWNS, len(human.pawns_deck))
@@ -56,12 +51,12 @@ class Test(BaseTest):
         
         self.assertEquals(Army.MAX_PAWNS-1, len(computer.pawns_deck))
         self.assertEquals(1, len(computer.pawns_board))
-        self.assertEquals(0, len(computer.pawns_thrown))
+        self.assertEquals(0, len(computer.pawns_discarded))
         self.assertEquals(0, len(computer.pawns_hand))
         
         self.assertEquals(Army.MAX_PAWNS-1, len(human.pawns_deck))
         self.assertEquals(1, len(human.pawns_board))
 
-        self.assertEquals(0, len(human.pawns_thrown))
+        self.assertEquals(0, len(human.pawns_discarded))
         self.assertEquals(0, len(human.pawns_hand))
         

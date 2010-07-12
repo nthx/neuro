@@ -22,7 +22,7 @@ class Player(object):
 
         self.pawns_deck = self.army.pawns[:]
         self.pawns_board = []  #pawns put on a board
-        self.pawns_thrown = []   #pawns thrown away. Wont be used at all
+        self.pawns_discarded = []   #pawns thrown away. Wont be used at all
         self.pawns_hand = []   #pawns kept in a hand for later turn
         
         
@@ -31,8 +31,13 @@ class Player(object):
             raise Exception('CantHaveMoreThan3OInHand')
         
         self.pawns_deck.remove(pawn)
-        self.pawns_hand.append(pawn)
         return pawn
+        
+        
+    def pawn(self, name):
+        result = filter(lambda pawn: pawn.get_name() == name, self.pawns_deck)
+        
+        return result and result[0] or None       
         
         
     def take_hq_from_deck(self):
@@ -50,22 +55,10 @@ class Player(object):
     def my_turn(self):
         if 0 == len(self.pawns_deck):
             raise GameShouldHandleThatSituation()
-        
-        moves = self.my_moves()
             
-        return moves
-        
-
-    def my_moves(self):
-        log.debug('%s: my_moves', self.name)
         return self.strategy.moves_by_strategy(self)
-            
-            
-    def move_made(self, move):
-        self.pawns_hand.remove(move.pawn)
-        self.pawns_board.append(move.pawn)
         
-
+            
     def is_human(self):
         raise OverrideMethod('is_human')
         
@@ -98,10 +91,8 @@ class ComputerPlayer(Player):
 
     def __init__(self, name, army, strategy=None, board=None):
         Player.__init__(self, name, army, strategy=strategy, board=board)
-        if not strategy:
-            raise ComputerMustHaveStrategy()
-            
     
+        
     def is_human(self):
         return False
     

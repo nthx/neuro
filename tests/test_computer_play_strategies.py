@@ -6,81 +6,54 @@ class Test(BaseTest):
     def test_00_different_strategies_available(self):
         game = Game()
 
-        
-        game.add_player(
-            HumanPlayer('Monika', 
-                OUTPOST,
-                strategy=RandomStrategy()
-            )
-        )
-        
-        game.add_player(
-            HumanPlayer('Tomasz', 
-                OUTPOST,
-                strategy=PredefinedStrategy(
-                    predefined_moves=[
-                        [Move(HqPawn(), 'E1', 'F')],
-                        [Move(RunnerPawn(), 'E2', 'B'), Discard(BattlePawn())],
-                        [Move(RunnerPawn(), 'E3', 'C'), Discard(RunnerPawn())]
-                    ]
-                )
-            )
-        )
+        game.add_player( HumanPlayer('Monika', OUTPOST, strategy=RandomStrategy()))
 
-        game.add_player(
-            ComputerPlayer('R-Engine', 
-                OUTPOST, 
-                strategy=RandomStrategy())
+        human = HumanPlayer('Tomasz', OUTPOST)
+        human.strategy = PredefinedStrategy(
+            predefined_moves=[
+                [Move(human.pawn('hq'), 'E1', 'E')]
+            ]
         )
-        game.add_player(
-            ComputerPlayer('P-Engine', 
-                OUTPOST, 
-                strategy=PredefinedStrategy(
-                    predefined_moves=[
-                        [Move(HqPawn(), 'A1', 'A')],
-                        [Move(RunnerPawn(), 'A2', 'B'), KeepInHand(BattlePawn())],
-                        [Move(RunnerPawn(), 'B1', 'C'), Discard(RunnerPawn())],
-                        [Battle(BattlePawn()), Discard(RunnerPawn()), Discard(RunnerPawn())]
-                    ]
-                )
-            )
-        )
-        
-        
+        game.add_player(human)
 
+        game.add_player( ComputerPlayer('R-Engine', OUTPOST, strategy=RandomStrategy()))
+        
+        computer = ComputerPlayer('P-Engine',OUTPOST)
+        computer.strategy = PredefinedStrategy(
+            predefined_moves=[
+                [Move(human.pawn('hq'), 'A1', 'A')]
+            ]
+        )
+        game.add_player(computer)
+        
         self.assertEqual(4, len(game.players))
+        
         
     def test_01_predefind_game(self):
         game = Game()
 
-        game.add_player(
-            ComputerPlayer('P-Engine', 
-                OUTPOST, 
-                strategy=PredefinedStrategy(
-                    predefined_moves=[
-                        [Move(HqPawn(), 'A1', 'A')],
-                        [Move(RunnerPawn(), 'A2', 'B'), KeepInHand(BattlePawn())],
-                        [Move(RunnerPawn(), 'B1', 'C'), Discard(RunnerPawn())],
-                        [Battle(BattlePawn()), Discard(RunnerPawn()), Discard(RunnerPawn())]
-                    ]
-                )
-            )
+        computer = ComputerPlayer('P-Engine', OUTPOST )
+        computer.strategy = PredefinedStrategy(
+            predefined_moves=[
+                [Move(computer.pawn('hq'), 'A1', 'A')],
+                [Move(computer.pawn('runner'), 'A2', 'B'), KeepInHand(computer.pawn('battle'))],
+                [Move(computer.pawn('runner'), 'B1', 'C'), Discard(computer.pawn('runner'))],
+                [Battle(computer.pawn('battle')), Discard(computer.pawn('runner')), Discard(computer.pawn('runner'))]
+            ]
         )
+        game.add_player(computer)
         
-        game.add_player(
-            HumanPlayer('Tomasz', 
-                OUTPOST,
-                strategy=PredefinedStrategy(
-                    predefined_moves=[
-                        [Move(HqPawn(), 'E1', 'F')],
-                        [Move(RunnerPawn(), 'E2', 'B'), Discard(BattlePawn())],
-                        [Move(RunnerPawn(), 'E3', 'C'), Discard(RunnerPawn())]
-                    ]
-                )
-            )
+        human = HumanPlayer('Tomasz', OUTPOST )
+        human.strategy = strategy=PredefinedStrategy(
+            predefined_moves=[
+                [Move(human.pawn('hq'), 'E1', 'F')],
+                [Move(human.pawn('runner'), 'E2', 'B'), Discard(human.pawn('battle'))],
+                [Move(human.pawn('runner'), 'E3', 'C'), Discard(human.pawn('runner'))]
+            ]
         )
-        
+        game.add_player(human)
+
         game.player_turn(game.computer())
         
-#        self.assertTrue(game.board.pawn('A1'))
-#        self.assertEquals('A', game.board.pawn('A1').direction)
+        self.assertTrue(game.board.pawn('A1'))
+        self.assertEquals('A', game.board.pawn('A1')['direction'])

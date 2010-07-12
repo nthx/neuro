@@ -26,6 +26,10 @@ class Pawn(object):
     
         
     def get_name(self):
+        return self.__class__.__name__.replace('Pawn', '').lower()
+        
+        
+    def get_repr(self):
         initiative = 'X'
         armor = ''
         actions = ''
@@ -49,7 +53,7 @@ class Pawn(object):
         
         return \
             "%(name)s\n%(initiative)s %(armor)s\n%(actions)s" % {
-                'name': self.__class__.__name__.replace('Pawn', '').lower(),
+                'name': self.get_name(),
                 'initiative': initiative,
                 'armor': armor,
                 'actions': actions
@@ -80,7 +84,7 @@ class Pawn(object):
 
         
     def __repr__(self):
-        return model_repr(self, attrs=['get_name()'])
+        return model_repr(self, attrs=['get_repr()'])
         
             
 class HqPawn(Pawn):
@@ -97,11 +101,14 @@ class HqPawn(Pawn):
             'F': [Melee(1)]
         }
 
+        
     def color(self):
         return self.army.hq_color
         
+        
     def am_hq(self):
         return True
+        
     
         
 class SniperPawn(Pawn):

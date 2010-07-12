@@ -12,7 +12,6 @@ from model.player import HumanPlayer, ComputerPlayer
 
 class Game(object):
     
-    
     def __init__(self):
         self.when_started = dt.utcnow()
         
@@ -43,15 +42,12 @@ class Game(object):
 
             
     def _do_move(self, player, move):
-        log.debug(player)
-        log.debug(player.strategy)
         if move.pawn.can_be_put_on_board:
-            available_hex = self.board.any_empty_hex()
-            available_hex.put(move.pawn)
+            hex = self.board.hex(move.where)
+            hex.put(move.pawn, move.direction)
         
         elif move.pawn.is_immediate:
             pass
             
         self.moves.append(move)
-        player.move_made(move)
         

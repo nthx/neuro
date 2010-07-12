@@ -21,8 +21,7 @@ class RandomStrategy(Strategy):
     def moves_by_strategy(self, player):
         picked = []
         if (Army.MAX_PAWNS - 0) == len(player.pawns_deck):
-            hq =player.take_hq_from_deck()
-            picked.append(hq)
+            picked.append(player.take_hq_from_deck())
         
         elif (Army.MAX_PAWNS - 1) == len(player.pawns_deck):
             picked.append(player.take_random_pawn())
@@ -36,12 +35,18 @@ class RandomStrategy(Strategy):
             picked.append(player.take_random_pawn())
             picked.append(player.take_random_pawn())
             
+        moves = []
         for pawn in picked:
-            yield Move(pawn,
-                       where=player.board.any_empty_hex(), 
-                       direction=Move.random_direction())
+            move = Move(pawn,
+                where=player.board.any_empty_hex().position,
+                direction=Move.random_direction()
+            )
+
+            move.update_player_pawns(player)
             
+            moves.append(move)
         
+        return moves
     
     
     
@@ -50,4 +55,18 @@ class PredefinedStrategy(Strategy):
     def __init__(self, predefined_moves):
         Strategy.__init__(self)
         self.predefined_moves = predefined_moves
-        pass
+
+        
+    def current_turn(self):
+        return self.predefined_moves.pop(0)
+        
+        
+    def moves_by_strategy(self, player):
+        turn = self.current_turn()
+        moves = []
+        for move in turn:
+            player.take_pawn_from_deck(move.pawn)
+            move.update_player_pawns(player)
+            moves.append(move)
+        
+        return moves

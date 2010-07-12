@@ -27,6 +27,18 @@ class Board(object):
         return self.hexes[name]
 
         
+    def pawn(self, position):
+        pawns = self.hex(position).pawn_directions
+        if len(pawns) == 0:
+            return None;
+            
+        elif len(pawns) == 1:
+            return pawns[0]
+            
+        else:
+            return pawns
+        
+        
     def connect(self, node_pairs):
         for node_pair in node_pairs:
             #log.debug('connect: %s-%s', self.hex(node_pair[0]), self.hex(node_pair[1]))
@@ -72,7 +84,7 @@ class Board(object):
     def pawns(self):
         pawns = []
         for hex in self.hexes.values():
-            pawns.extend(hex.pawns)
+            pawns.extend(x['pawn'] for x in hex.pawn_directions)
         return pawns
         
         

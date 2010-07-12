@@ -8,27 +8,33 @@ from util.text import model_repr
 
 
 class Hex(object):
-    def __init__(self, name):
-        self.name = name
-        self.pawns = [] #pawns that lie on the hex. 1st = botton
+    
+    def __init__(self, position):
+        self.position = position
+        self.pawn_directions = [] #(pawn, direction) that lie on the hex. 1st = bottom
+    
         
-    def put(self, pawn):
-        self.pawns.append(pawn)
+    def put(self, pawn, direction):
+        self.pawn_directions.append({'pawn':pawn, 'direction':direction})
+        
         
     def color(self):
         if self.is_empty():
             return 'white'
         else:
-            return self.pawns[0].color()
+            return self.pawn_directions[0]['pawn'].color()
         
+            
     def is_empty(self):
-        return len(self.pawns) == 0
+        return len(self.pawn_directions) == 0
+        
         
     def __repr__(self):
-        if self.pawns:
-            return '%(pawn)s' % {
-                'army': self.pawns[0].army.name,
-                'pawn': self.pawns[0].get_name()
+        if self.pawn_directions:
+            return '%(pawn)s\n%(direction)s' % {
+                'army': self.pawn_directions[0]['pawn'].army.name,
+                'pawn': self.pawn_directions[0]['pawn'].get_repr(),
+                'direction': self.pawn_directions[0]['direction']
             }
         else:
             return ''
