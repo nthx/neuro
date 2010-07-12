@@ -4,7 +4,7 @@ log = logging.getLogger(__name__)
 
 from datetime import datetime as dt
 
-from model.army import Army, POSTERUNEK, BORGO, HEGEMONIA, MOLOCH
+from model.army import Army, OUTPOST, BORGO, HEGEMONIA, MOLOCH
 from model.board import Board
 from model.player import HumanPlayer, ComputerPlayer
 
@@ -18,13 +18,13 @@ class Game(object):
         
         self.players = []
         self.moves = []
-        self.initialize_players()
+        #self.initialize_players()
 
         self.board = Board(self.moves)
 
-    def initialize_players(self):
-        self.players.append(ComputerPlayer('Teddy', army=POSTERUNEK, board=self))
-        self.players.append(HumanPlayer('Tomasz', army=BORGO, board=self))
+    def add_player(self, player):
+        player.board = self.board
+        self.players.append(player)
 
         
     def computer(self):
@@ -43,6 +43,8 @@ class Game(object):
 
             
     def _do_move(self, player, move):
+        log.debug(player)
+        log.debug(player.strategy)
         if move.pawn.can_be_put_on_board:
             available_hex = self.board.any_empty_hex()
             available_hex.put(move.pawn)

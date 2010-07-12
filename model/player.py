@@ -4,14 +4,17 @@ log = logging.getLogger(__name__)
 
 import random
 
+from model.ai import RandomStrategy, PredefinedStrategy
 from model.army import Army
 from model.move import Move
-
+from model.ui import UIConsoleStrategy
 
 class Player(object):
-    def __init__(self, name, army=None, board=None):
+    
+    def __init__(self, name, army, strategy=None, board=None):
         self.name = name
         self.board = board
+        self.strategy = strategy
         
         if not army:
             army = Army.random()
@@ -23,32 +26,6 @@ class Player(object):
         self.pawns_hand = []   #pawns kept in a hand for later turn
         
         
-    def pick_pawns(self):
-        log.debug('%s: pick_pawns', self.name)
-        picked = []
-        if 0 == len(self.pawns_deck):
-            pass
-            
-        elif (Army.MAX_PAWNS - 0) == len(self.pawns_deck):
-            picked.append(self.take_pawn_from_deck(self.take_hq_from_deck()))
-        
-        elif (Army.MAX_PAWNS - 1) == len(self.pawns_deck):
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            
-        elif (Army.MAX_PAWNS - 2) == len(self.pawns_deck):
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            
-        else:
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            picked.append(self.take_pawn_from_deck(random.choice(self.pawns_deck)))
-            
-        picked = [pawn for pawn in picked if pawn is not None]
-        log.debug(picked)
-        return picked
-            
-            
     def take_pawn_from_deck(self, pawn):
         if len(self.pawns_hand) >= 3:
             raise Exception('CantHaveMoreThan3OInHand')
@@ -60,46 +37,74 @@ class Player(object):
         
     def take_hq_from_deck(self):
         result = filter(lambda pawn: pawn.am_hq(), self.pawns_deck)
-        return result and result[0] or None
+        if not result or len(result)>1:
+            raise HqMustBeNowOnPlayersDeck(result)
+        
+        return self.take_pawn_from_deck(result[0])
+        
+        
+    def take_random_pawn(self):
+        return self.take_pawn_from_deck(random.choice(self.pawns_deck))
         
         
     def my_turn(self):
-        pawns = self.pick_pawns()
-        if len(pawns) > 2:
-            to_throw_away = random.choice(pawns)
-            pawns.remove(to_throw_away)
-            self.pawns_hand.remove(to_throw_away)
+        if 0 == len(self.pawns_deck):
+            raise GameShouldHandleThatSituation()
+        
+        moves = self.my_moves()
             
-        for pawn in pawns:
-            yield Move(pawn)
+        return moves
         
 
+    def my_moves(self):
+        log.debug('%s: my_moves', self.name)
+        return self.strategy.moves_by_strategy(self)
+            
+            
     def move_made(self, move):
         self.pawns_hand.remove(move.pawn)
         self.pawns_board.append(move.pawn)
         
 
     def is_human(self):
-        pass
+        raise OverrideMethod('is_human')
+        
         
     def is_computer(self):
-        pass
+        raise OverrideMethod('is_computer')
         
         
 
         
         
 class HumanPlayer(Player):
+    
+    def __init__(self, name, army, strategy=RandomStrategy(), board=None):
+        Player.__init__(self, name, army, strategy=strategy, board=board)
+        if not strategy:
+            raise ComputerMustHaveStrategy()
+
+
     def is_human(self):
         return True
         
+        
     def is_computer(self):
         return False
-    
 
+
+        
 class ComputerPlayer(Player):
+
+    def __init__(self, name, army, strategy=None, board=None):
+        Player.__init__(self, name, army, strategy=strategy, board=board)
+        if not strategy:
+            raise ComputerMustHaveStrategy()
+            
+    
     def is_human(self):
         return False
+    
         
     def is_computer(self):
         return True

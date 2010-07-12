@@ -84,7 +84,7 @@ class Pawn(object):
         
             
 class HqPawn(Pawn):
-    def __init__(self, army):
+    def __init__(self, army=None):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
         self.initiative = [0]
@@ -111,25 +111,25 @@ class SniperPawn(Pawn):
 
         
 class MoveRotatePawn(Pawn):
-    def __init__(self, army):
+    def __init__(self, army=None):
         Pawn.__init__(self, army)
         self.is_immediate = True
 
 
 class PushPawn(Pawn):
-    def __init__(self, army):
+    def __init__(self, army=None):
         Pawn.__init__(self, army)
         self.is_immediate = True
 
         
 class BattlePawn(Pawn):
-    def __init__(self, army):
+    def __init__(self, army=None):
         Pawn.__init__(self, army)
         self.is_immediate = True
 
 
 class MedicPawn(Pawn):
-    def __init__(self, army):
+    def __init__(self, army=None):
         Pawn.__init__(self, army)
         self.can_be_put_on_board = True
         self.actions = {

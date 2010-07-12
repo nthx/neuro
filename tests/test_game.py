@@ -5,7 +5,12 @@ class Test(BaseTest):
     
     def test_01_players(self):
         game = Game()
+        self.assertEqual(0, len(game.players))
+        
+        game.add_player(ComputerPlayer('X-engine', OUTPOST, strategy=RandomStrategy()))
+        game.add_player(HumanPlayer('Tomasz', BORGO))
         self.assertEqual(2, len(game.players))
+        
         self.assertTrue(game.players[0].is_computer())
         self.assertTrue(game.players[1].is_human())
         
@@ -16,28 +21,19 @@ class Test(BaseTest):
         human = game.human()
         self.assertNotEqual(human, computer)
         
-        
-        self.assertEquals(Army.MAX_PAWNS, len(computer.pawns_deck))
-        self.assertEquals(0, len(computer.pawns_board))
-        self.assertEquals(0, len(computer.pawns_thrown))
-        self.assertEquals(0, len(computer.pawns_hand))
-        
-        
-    def test_02_army(self):
-        game = Game()
-        human = game.human()
-        computer = game.computer()
-        self.assertTrue(human.army)
-        self.assertEqual(Army.MAX_PAWNS, len(human.army.pawns))
-        self.assertEqual(Army.MAX_PAWNS, len(computer.army.pawns))
-        self.assertNotEqual(human.army, computer.army)
-        
-        self.assertTrue(human.army.get_hq())
-        self.assertTrue(computer.army.get_hq())
+
 
         
-    def test_05_moves(self):
+    def test_05_game_with_1_turns(self):
         game = Game()
+        game.add_player(
+            ComputerPlayer('X-engine', 
+                           OUTPOST, 
+                           strategy=RandomStrategy()
+            )
+        )
+        game.add_player(HumanPlayer('Tomasz', OUTPOST))
+
         human = game.human()
         computer = game.computer()
 

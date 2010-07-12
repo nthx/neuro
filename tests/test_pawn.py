@@ -4,7 +4,7 @@ from tests.base import *
 class Test(BaseTest):
     
     def test_00_creation_of_medic(self):
-        medic = MedicPawn(POSTERUNEK)
+        medic = MedicPawn(OUTPOST)
         log.debug(medic)
         
         self.assertEqual(None, medic.extra_armor)

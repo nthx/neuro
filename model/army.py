@@ -40,9 +40,9 @@ class Army(object):
 
         
 
-POSTERUNEK = Army('Posterunek', '#00FF00', hq_color='#00EE00')
+OUTPOST = Army('Posterunek', '#00FF00', hq_color='#00EE00')
 MOLOCH = Army('Moloch', 'red')
 BORGO = Army('Borgo', '#FFFF00', hq_color='#FFEE00')
 HEGEMONIA = Army('Hegemonia', 'blue')
-ARMIES = [POSTERUNEK, MOLOCH, BORGO, HEGEMONIA]
+ARMIES = [OUTPOST, MOLOCH, BORGO, HEGEMONIA]
         
