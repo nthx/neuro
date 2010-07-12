@@ -22,6 +22,11 @@ class Move(object):
         player.pawns_board.append(self.pawn)
         
         
+    def put_yourself_to_board(self, board):
+        hex = board.hex(self.where)
+        hex.put(self.pawn, self.direction)
+        
+        
     def __repr__(self):
         return model_repr(self, attrs=['pawn', 'where', 'direction'])
         
@@ -30,22 +35,32 @@ class KeepInHand(Move):
     def __init__(self, pawn):
         Move.__init__(self, pawn)
 
+        
     def update_player_pawns(self, player):    
         player.pawns_hand.append(self.pawn)
+
         
+    def put_yourself_to_board(self, board):
+        pass        
         
         
 class Discard(Move):
     def __init__(self, pawn):
         Move.__init__(self, pawn)
 
+        
     def update_player_pawns(self, player):    
         player.pawns_discarded.append(self.pawn)
         
+
+    def put_yourself_to_board(self, board):
+        pass        
         
         
 class Battle(Move):
     def __init__(self, pawn):
         Move.__init__(self, pawn)
     
-    
+
+    def put_yourself_to_board(self, board):
+        pass    

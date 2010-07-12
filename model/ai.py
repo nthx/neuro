@@ -4,7 +4,7 @@ log = logging.getLogger(__name__)
 
 import random
 from model.army import Army
-from model.move import Move
+from model.move import Move, Discard
 
 
 class Strategy(object):
@@ -36,11 +36,15 @@ class RandomStrategy(Strategy):
             picked.append(player.take_random_pawn())
             
         moves = []
-        for pawn in picked:
-            move = Move(pawn,
-                where=player.board.any_empty_hex().position,
-                direction=Move.random_direction()
-            )
+        for i, pawn in enumerate(picked):
+            if i in [0, 1]:
+                move = Move(pawn,
+                    where=player.board.any_empty_hex().position,
+                    direction=Move.random_direction()
+                )
+                
+            else:
+                move = Discard(pawn)
 
             move.update_player_pawns(player)
             
@@ -65,8 +69,11 @@ class PredefinedStrategy(Strategy):
         turn = self.current_turn()
         moves = []
         for move in turn:
+            log.debug(player.name)
+            log.debug(move)
             player.take_pawn_from_deck(move.pawn)
             move.update_player_pawns(player)
             moves.append(move)
         
         return moves
+        

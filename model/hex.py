@@ -31,13 +31,10 @@ class Hex(object):
         
     def __repr__(self):
         if self.pawn_directions:
-            return '%(pawn)s\n%(direction)s' % {
+            return '%(army)s\n%(pawn)s%(direction)s' % {
                 'army': self.pawn_directions[0]['pawn'].army.name,
                 'pawn': self.pawn_directions[0]['pawn'].get_repr(),
                 'direction': self.pawn_directions[0]['direction']
             }
         else:
             return ''
-        
-        
-                    

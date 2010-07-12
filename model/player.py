@@ -30,14 +30,22 @@ class Player(object):
         if len(self.pawns_hand) >= 3:
             raise Exception('CantHaveMoreThan3OInHand')
         
+        log.debug(', '.join([x.get_name() for x in self.pawns_deck]))
         self.pawns_deck.remove(pawn)
         return pawn
         
         
     def pawn(self, name):
-        result = filter(lambda pawn: pawn.get_name() == name, self.pawns_deck)
+        pawns = filter(lambda pawn: pawn.get_name() == name, self.pawns_deck)
         
-        return result and result[0] or None       
+        if len(pawns) == 0:
+            return None;
+            
+        elif len(pawns) == 1:
+            return pawns[0]
+            
+        else:
+            return pawns
         
         
     def take_hq_from_deck(self):
@@ -99,5 +107,4 @@ class ComputerPlayer(Player):
         
     def is_computer(self):
         return True
-        
     

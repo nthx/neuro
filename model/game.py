@@ -20,6 +20,7 @@ class Game(object):
         #self.initialize_players()
 
         self.board = Board(self.moves)
+        
 
     def add_player(self, player):
         player.board = self.board
@@ -43,9 +44,8 @@ class Game(object):
             
     def _do_move(self, player, move):
         if move.pawn.can_be_put_on_board:
-            hex = self.board.hex(move.where)
-            hex.put(move.pawn, move.direction)
-        
+            move.put_yourself_to_board(self.board)
+            
         elif move.pawn.is_immediate:
             pass
             
