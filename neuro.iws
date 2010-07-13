@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="63df93ba-93de-4ec4-a7e0-47019f8fbd44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuro.iws" afterPath="$PROJECT_DIR$/neuro.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/base.py" afterPath="$PROJECT_DIR$/tests/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_computer_play_strategies.py" afterPath="$PROJECT_DIR$/tests/test_computer_play_strategies.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_player.py" afterPath="$PROJECT_DIR$/tests/test_player.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ai.py" afterPath="$PROJECT_DIR$/model/ai.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/move.py" afterPath="$PROJECT_DIR$/model/move.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/hex.py" afterPath="$PROJECT_DIR$/model/hex.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/player.py" afterPath="$PROJECT_DIR$/model/player.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/game.py" afterPath="$PROJECT_DIR$/model/game.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_sample_game.py" afterPath="$PROJECT_DIR$/tests/test_sample_game.py" />
@@ -85,19 +86,28 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_computer_play_strategies.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/test_computer_play_strategies.py">
+      <file leaf-file-name="move.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/move.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="27" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.9107612">
+            <state line="65" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ai.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/ai.py">
+      <file leaf-file-name="test_computer_play_strategies.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/test_computer_play_strategies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="6" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
+            <state line="101" column="33" selection-start="3533" selection-end="3533" vertical-scroll-proportion="0.43103448">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_player.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="14" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,56 +116,25 @@
       <file leaf-file-name="player.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="8" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0">
+            <state line="66" column="29" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="move.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/move.py">
+      <file leaf-file-name="ai.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/ai.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="8" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+            <state line="108" column="51" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_game.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_game.py">
+      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1278957798000" expanded="true" signature="82:2267" placeholder="..." />
-                <marker date="1278957798000" expanded="true" signature="117:835" placeholder="..." />
-                <marker date="1278957798000" expanded="true" signature="905:2267" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pawn.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/pawn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="6" selection-start="3480" selection-end="3480" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/board.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="8" selection-start="638" selection-end="805" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hex.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/hex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="19" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -188,19 +167,19 @@
       <list>
         <option value="$PROJECT_DIR$/tests/test_army.py" />
         <option value="$PROJECT_DIR$/model/ui.py" />
-        <option value="$PROJECT_DIR$/tests/base.py" />
         <option value="$PROJECT_DIR$/model/pawn.py" />
-        <option value="$PROJECT_DIR$/tests/test_player.py" />
         <option value="$PROJECT_DIR$/model/hex.py" />
-        <option value="$PROJECT_DIR$/model/game.py" />
-        <option value="$PROJECT_DIR$/tests/test_sample_game.py" />
         <option value="$PROJECT_DIR$/run_tests.sh" />
         <option value="$PROJECT_DIR$/tests/test_board.py" />
-        <option value="$PROJECT_DIR$/model/move.py" />
-        <option value="$PROJECT_DIR$/model/ai.py" />
         <option value="$PROJECT_DIR$/tests/test_game.py" />
         <option value="$PROJECT_DIR$/model/board.py" />
+        <option value="$PROJECT_DIR$/tests/test_sample_game.py" />
+        <option value="$PROJECT_DIR$/model/game.py" />
+        <option value="$PROJECT_DIR$/tests/base.py" />
         <option value="$PROJECT_DIR$/model/player.py" />
+        <option value="$PROJECT_DIR$/tests/test_player.py" />
+        <option value="$PROJECT_DIR$/model/ai.py" />
+        <option value="$PROJECT_DIR$/model/move.py" />
         <option value="$PROJECT_DIR$/tests/test_computer_play_strategies.py" />
       </list>
     </option>
@@ -366,7 +345,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -420,6 +400,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="neuro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 2.6.5+ (/usr/bin/python2.6) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python2.6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist-packages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -495,22 +497,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonUnitTestConfigurationType" factoryName="Python's unittest">
@@ -686,17 +687,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-23" width="1452" height="929" extended-state="0" />
+    <frame x="0" y="27" width="1440" height="846" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5477612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4832714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4820442" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40749148" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19266714" sideWeight="0.5080545" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19216824" sideWeight="0.5082873" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58059704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -751,118 +752,102 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/test_army.py">
+    <entry file="file://$PROJECT_DIR$/model/army.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="50" selection-start="218" selection-end="218" vertical-scroll-proportion="0.19640565">
-          <folding />
-        </state>
+        <state line="11" column="4" selection-start="174" selection-end="183" vertical-scroll-proportion="0.17073171" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_player.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="9" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.6546855">
-          <folding />
-        </state>
+        <state line="18" column="16" selection-start="577" selection-end="577" vertical-scroll-proportion="0.3928113" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.6/dist-packages/axiom/plugins/axiom_plugins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="211" column="6" selection-start="6246" selection-end="6246" vertical-scroll-proportion="0.33247754" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_tests.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="72" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0872914">
-          <folding />
-        </state>
+        <state line="5" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.10911425" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/army.py">
+    <entry file="file://$PROJECT_DIR$/model/pawn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="4" selection-start="174" selection-end="183" vertical-scroll-proportion="0.17073171">
-          <folding />
-        </state>
+        <state line="137" column="6" selection-start="3480" selection-end="3480" vertical-scroll-proportion="0.33247754" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_sample_game.py">
+    <entry file="file://$PROJECT_DIR$/model/hex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="53" selection-start="271" selection-end="271" vertical-scroll-proportion="0.15275995">
+        <state line="39" column="19" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.85109115" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="8" selection-start="2768" selection-end="2768" vertical-scroll-proportion="0.16235632">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="38" selection-start="1066" selection-end="1087" vertical-scroll-proportion="0.80359435">
+        <state line="41" column="23" selection-start="967" selection-end="967" vertical-scroll-proportion="0.5114943">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_sample_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="16" selection-start="577" selection-end="577" vertical-scroll-proportion="0.3928113">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.6/dist-packages/axiom/plugins/axiom_plugins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="6" selection-start="6246" selection-end="6246" vertical-scroll-proportion="0.33247754">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/hex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="19" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/board.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="8" selection-start="638" selection-end="805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/pawn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="6" selection-start="3480" selection-end="3480" vertical-scroll-proportion="0.0">
+        <state line="14" column="4" selection-start="463" selection-end="463" vertical-scroll-proportion="0.34195402">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1278957798000" expanded="true" signature="82:2267" placeholder="..." />
-            <marker date="1278957798000" expanded="true" signature="117:835" placeholder="..." />
-            <marker date="1278957798000" expanded="true" signature="905:2267" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/move.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="8" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+        <state line="47" column="0" selection-start="1649" selection-end="1649" vertical-scroll-proportion="1.1479886">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/player.py">
+    <entry file="file://$PROJECT_DIR$/tests/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="8" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/ai.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="6" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
+        <state line="108" column="51" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="29" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="14" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/move.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_computer_play_strategies.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="27" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.9107612">
+        <state line="101" column="33" selection-start="3533" selection-end="3533" vertical-scroll-proportion="0.43103448">
           <folding />
         </state>
       </provider>

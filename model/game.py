@@ -12,14 +12,17 @@ from model.player import HumanPlayer, ComputerPlayer
 
 class Game(object):
     
-    def __init__(self):
+    def __init__(self, print_graph=False):
         self.when_started = dt.utcnow()
         
         self.players = []
         self.moves = []
-        #self.initialize_players()
+        self.print_graph = print_graph
 
         self.board = Board(self.moves)
+        
+        if self.print_graph:
+            self.board.print_graph()
         
 
     def add_player(self, player):
@@ -40,6 +43,9 @@ class Game(object):
         
         for move in moves:
             self._do_move(player, move)
+            
+        if self.print_graph:
+            self.board.print_graph()
 
             
     def _do_move(self, player, move):

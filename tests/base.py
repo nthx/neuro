@@ -8,7 +8,7 @@ from model.ai import RandomStrategy, PredefinedStrategy
 from model.army import Army, OUTPOST, BORGO, HEGEMONIA, MOLOCH
 from model.board import Board
 from model.game import Game
-from model.move import Move, Discard, Battle, KeepInHand
+from model.move import BaseMove, Move, Discard, Battle, KeepInHand
 from model.pawn import *
 from model.player import HumanPlayer, ComputerPlayer
 

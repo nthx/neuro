@@ -20,14 +20,14 @@ class Test(BaseTest):
 
         
     def test_02_predefind_strategy_works(self):
-        human = HumanPlayer('Tomasz', OUTPOST )
-
-        human.strategy = PredefinedStrategy(
-            predefined_moves=[
-                [Move(human.pawn('hq'), 'E1', 'F')],
-                [Move(human.pawn('runner'), 'E2', 'B'), Discard(human.pawn('battle'))],
-                [Move(human.pawn('runner'), 'E3', 'C'), Discard(human.pawn('runner'))]
-            ]
+        human = HumanPlayer('Tomasz', OUTPOST, 
+            strategy = PredefinedStrategy(
+                predefined_moves=[
+                    ['move-hq-E1-F'],
+                    ['move-runner-E2-B', 'discard-battle'],
+                    ['move-runner-E3-C', 'discard-runner']
+                ]
+            )
         )
         
         human.my_turn()

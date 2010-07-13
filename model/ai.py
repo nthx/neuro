@@ -4,7 +4,7 @@ log = logging.getLogger(__name__)
 
 import random
 from model.army import Army
-from model.move import Move, Discard
+from model.move import BaseMove, Move, Discard
 
 
 class Strategy(object):
@@ -59,14 +59,58 @@ class PredefinedStrategy(Strategy):
     def __init__(self, predefined_moves):
         Strategy.__init__(self)
         self.predefined_moves = predefined_moves
+        self.parsed = False
 
         
-    def current_turn(self):
+    def current_turn(self, player):
+        if not self.parsed:
+            log.debug('parsing..')
+            self.parse_text_moves(player)
+        log.debug('parsed')
         return self.predefined_moves.pop(0)
         
+    
+    def parse_text_moves(self, player):
+        self.parsed = True
+        pawns_used = {} #key = text_name, value = how many times used in predefined moves
+        def parse(text_move):
+            """@in: move-hq-A1-A
+            @in: discard-runner
+            """
+            log.debug('in: %s' % text_move)
+            s = text_move.split('-')
+            clazz = s[0]
+            pawn_name = s[1]
+            where = len(s) > 2 and s[2] or None
+            direction = len(s) > 3 and s[3] or None
+            if pawn_name not in pawns_used:
+                pawns_used[pawn_name] = 0
+            
+            pawns = filter(lambda pawn: pawn.get_name() == pawn_name, player.pawns_deck)
+            
+            pawn = pawns[pawns_used[pawn_name]]
+            pawns_used[pawn_name] += 1
+            move = BaseMove.object_by_clazz(clazz)
+            move.pawn = pawn
+            move.where = where
+            move.direction = direction
+            log.debug('out: %s' % move)
+            return move
+            
+        text_moves = self.predefined_moves
+        self.predefined_moves = []
+        log.debug('text moves....')
+        for turn in text_moves:
+            log.debug('turn: %s' % turn)
+            real_moves = []
+            for text_move in turn:
+                log.debug('text_move: %s' % text_move)
+                real_moves.append(parse(text_move))
+            self.predefined_moves.append(real_moves)
+            
         
     def moves_by_strategy(self, player):
-        turn = self.current_turn()
+        turn = self.current_turn(player)
         moves = []
         for move in turn:
             log.debug(player.name)

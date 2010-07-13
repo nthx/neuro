@@ -6,8 +6,8 @@ import random
 
 from model.ai import RandomStrategy, PredefinedStrategy
 from model.army import Army
-from model.move import Move
-from model.ui import UIConsoleStrategy
+
+
 
 class Player(object):
     
