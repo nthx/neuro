@@ -14,8 +14,28 @@ class Hex(object):
         self.pawn_directions = [] #(pawn, direction) that lie on the hex. 1st = bottom
     
         
-    def put(self, pawn, direction):
+    def put(self, pawn, direction='A'):
         self.pawn_directions.append({'pawn':pawn, 'direction':direction})
+      
+        
+    def clear(self):
+        self.pawn_directions = []
+        
+        
+    def has_player_hq(self, player):
+        for pawn_direction in self.pawn_directions:
+            if pawn_direction['pawn'].player == player and pawn_direction['pawn'].am_hq():
+                return True
+        return False
+      
+        
+    def paws_count_to_battle(self):
+        for pawn_direction in self.pawn_directions:
+            #TODO: check mine+runner in last move if it works
+            if not pawn_direction['pawn'].counts_to_battle:
+                return False
+                
+        return True
         
         
     def color(self):

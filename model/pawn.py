@@ -10,11 +10,13 @@ from util.text import model_repr
 class Pawn(object):
     def __init__(self, army):
         self.army = army
+        self.player = None #will be setup after player selects army
         
         #do not modify defaults
         self.is_immediate = False
         self.can_be_put_on_board = False
         self.is_mobile = False
+        self.counts_to_battle = True
         
         self.actions = {}
         self.initiative = []
@@ -48,7 +50,8 @@ class Pawn(object):
             actions += '%s: ' % direction
             for action in self.actions[direction]:
                 actions += action.text_repr()
-            actions += '\n'
+            actions += ','
+#            actions += '\n'
             
         
         return \
@@ -64,21 +67,13 @@ class Pawn(object):
         
     def action(self, directions, name):
         found_action = NoneAction()
-        log.debug('action: %s %s', directions, name)
         for direction in directions:
-            log.debug(direction)
             for action in self.actions.get(direction, []):
-                log.debug(action)
                 if name == action.name():
-                    log.debug('found')
                     if not found_action.is_defined():
-                        log.debug('1')
                         found_action = action
                     else:
-                        log.debug('2')
                         found_action = found_action.plus(action)
-                else:
-                    log.debug('not found')
                     
         return found_action
 
@@ -166,4 +161,17 @@ class Runner2Pawn(Pawn):
             'B': [Range(1)]
         }
         self.initiative = [2]
+
+
+class MinePawn(Pawn):
+    def __init__(self, army=None):
+        Pawn.__init__(self, army)
+        self.can_be_put_on_board = True
+        self.actions = {
+        }
+        self.initiative = []
+        self.counts_to_battle = True
+
+
+        
         

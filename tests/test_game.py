@@ -6,7 +6,7 @@ class Test(BaseTest):
     def test_01_players(self):
         game = Game()
         self.assertEquals(0, len(game.players))
-        self.assertEquals(0, len(game.moves))
+        self.assertEquals(0, len(game.moves_all()))
         
         game.add_player(ComputerPlayer('X-engine', OUTPOST, strategy=RandomStrategy()))
         game.add_player(HumanPlayer('Tomasz', BORGO))
@@ -21,8 +21,6 @@ class Test(BaseTest):
         computer = game.computer()
         human = game.human()
         self.assertNotEqual(human, computer)
-        
-
 
         
     def test_05_game_with_1_turns(self):
@@ -34,7 +32,7 @@ class Test(BaseTest):
         computer = game.computer()
 
         game.player_turn(computer)
-        self.assertEqual(1, len(game.moves))
+        self.assertEqual(1, len(game.moves_all()))
         self.assertEqual(1, len(game.board.pawns()))
         
         self.assertEquals(Army.MAX_PAWNS-1, len(computer.pawns_deck))
@@ -46,7 +44,7 @@ class Test(BaseTest):
         self.assertEquals(0, len(human.pawns_board))
         
         game.player_turn(human)
-        self.assertEqual(2, len(game.moves))
+        self.assertEqual(2, len(game.moves_all()))
         self.assertEqual(2, len(game.board.pawns()))
         
         self.assertEquals(Army.MAX_PAWNS-1, len(computer.pawns_deck))

@@ -9,23 +9,28 @@ from model.hex import Hex
 
 
 class Board(object):
-    def __init__(self, moves=[]):
+    def __init__(self, game=None):
         self.graph = nx.Graph()
-        self.hexes = {}
-        self.moves = moves #a reference to game's moves
+        self.hexes = {} #key: position, value: hex
+        self.game = game #a reference to game to only get printed graph filename
         
         self.initialize_board()
         
     
-    def new_hex(self, name):
-        hex = Hex(name)
-        self.hexes[name] = hex
+    def new_hex(self, position):
+        hex = Hex(position)
+        self.hexes[position] = hex
         return hex
         
         
-    def hex(self, name):
-        return self.hexes[name]
+    def hex(self, position):
+        return self.hexes[position]
 
+
+    def hex_with_player_hq(self, player):
+        hq = filter(lambda hex: hex.has_player_hq(player), self.hexes.values())
+        return hq[0]
+        
         
     def pawn(self, position):
         pawns = self.hex(position).pawn_directions
@@ -41,17 +46,16 @@ class Board(object):
         
     def connect(self, node_pairs):
         for node_pair in node_pairs:
-            #log.debug('connect: %s-%s', self.hex(node_pair[0]), self.hex(node_pair[1]))
             self.graph.add_edge(self.hex(node_pair[0]), self.hex(node_pair[1]))
         
         
     def initialize_board(self):
-        for name in ['A1', 'A2', 'A3', 
-                           'B1', 'B2', 'B3', 'B4',
-                           'C1', 'C2', 'C3', 'C4', 'C5',
-                           'D1', 'D2', 'D3', 'D4',
-                           'E1', 'E2', 'E3']:
-            self.graph.add_node(self.new_hex(name))
+        for position in ['A1', 'A2', 'A3', 
+                         'B1', 'B2', 'B3', 'B4',
+                         'C1', 'C2', 'C3', 'C4', 'C5',
+                         'D1', 'D2', 'D3', 'D4',
+                         'E1', 'E2', 'E3']:
+            self.graph.add_node(self.new_hex(position))
         
         self.connect([('A1', 'A2'), ('A1', 'B1'), ('A1', 'B2')])
         self.connect([('A2', 'A3'), ('A2', 'B2'), ('A2', 'B3')])
@@ -88,6 +92,16 @@ class Board(object):
         return pawns
         
         
+    def rule_is_full_for_battle(self):
+        for hex in self.hexes.values():
+            if hex.is_empty():
+                return False
+            if not hex.paws_count_to_battle():
+                return False
+                
+        return True
+        
+
     def print_graph(self):
         import matplotlib.pyplot as plt
         a=0.2
@@ -128,7 +142,7 @@ class Board(object):
             node_color=[hex.color() for hex in self.graph],
             node_size=5000)
 
-        filename = 'screenshots/board-%s.png' % str(len(self.moves)).rjust(3, '0')
+        filename = 'screenshots/board-%s.png' % str(len(self.game.moves_all())).rjust(3, '0')
         plt.savefig(filename)
 
         

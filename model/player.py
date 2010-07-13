@@ -4,6 +4,8 @@ log = logging.getLogger(__name__)
 
 import random
 
+from util.text import model_repr
+
 from model.army import Army
 from model.strategy import RandomStrategy, PredefinedStrategy
 
@@ -16,8 +18,6 @@ class Player(object):
         self.board = board
         self.strategy = strategy
         
-        if not army:
-            army = Army.random()
         self.army = army
 
         self.pawns_deck = self.army.pawns[:]
@@ -25,12 +25,14 @@ class Player(object):
         self.pawns_discarded = []   #pawns thrown away. Wont be used at all
         self.pawns_hand = []   #pawns kept in a hand for later turn
         
+        for pawn in army.pawns:
+            pawn.player = self
+        
         
     def take_pawn_from_deck(self, pawn):
         if len(self.pawns_hand) >= 3:
             raise Exception('CantHaveMoreThan3OInHand')
         
-        log.debug(', '.join([x.get_name() for x in self.pawns_deck]))
         self.pawns_deck.remove(pawn)
         return pawn
         
@@ -75,6 +77,8 @@ class Player(object):
         raise OverrideMethod('is_computer')
         
         
+    def __repr__(self):
+        return model_repr(self, attrs=['name'])
 
         
         

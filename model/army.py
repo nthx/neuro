@@ -26,7 +26,7 @@ class Army(object):
             self.pawns.append(HqPawn(self))
             
         while len(self.pawns) < Army.MAX_PAWNS:   
-            self.pawns.append(random.choice([RunnerPawn(self), MedicPawn(self), BattlePawn(self)]))
+            self.pawns.append(random.choice([RunnerPawn(self), MedicPawn(self), BattlePawn(self), SniperPawn(self)]))
         
             
     def get_hq(self):

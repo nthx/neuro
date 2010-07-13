@@ -64,9 +64,7 @@ class PredefinedStrategy(Strategy):
         
     def current_turn(self, player):
         if not self.parsed:
-            log.debug('parsing..')
             self.parse_text_moves(player)
-        log.debug('parsed')
         return self.predefined_moves.pop(0)
         
     
@@ -77,7 +75,6 @@ class PredefinedStrategy(Strategy):
             """@in: move-hq-A1-A
             @in: discard-runner
             """
-            log.debug('in: %s' % text_move)
             s = text_move.split('-')
             clazz = s[0]
             pawn_name = s[1]
@@ -87,24 +84,19 @@ class PredefinedStrategy(Strategy):
                 pawns_used[pawn_name] = 0
             
             pawns = filter(lambda pawn: pawn.get_name() == pawn_name, player.pawns_deck)
-            
             pawn = pawns[pawns_used[pawn_name]]
             pawns_used[pawn_name] += 1
             move = BaseMove.object_by_clazz(clazz)
             move.pawn = pawn
             move.where = where
             move.direction = direction
-            log.debug('out: %s' % move)
             return move
             
         text_moves = self.predefined_moves
         self.predefined_moves = []
-        log.debug('text moves....')
         for turn in text_moves:
-            log.debug('turn: %s' % turn)
             real_moves = []
             for text_move in turn:
-                log.debug('text_move: %s' % text_move)
                 real_moves.append(parse(text_move))
             self.predefined_moves.append(real_moves)
             
@@ -113,8 +105,6 @@ class PredefinedStrategy(Strategy):
         turn = self.current_turn(player)
         moves = []
         for move in turn:
-            log.debug(player.name)
-            log.debug(move)
             player.take_pawn_from_deck(move.pawn)
             move.update_player_pawns(player)
             moves.append(move)

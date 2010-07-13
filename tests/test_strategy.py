@@ -28,7 +28,7 @@ class Test(BaseTest):
         
         
     def test_01_predefind_game(self):
-        game = Game(print_graph=True)
+        game = Game(print_graph=False)
 
         game.add_player(ComputerPlayer('P-Engine', BORGO, 
             strategy = PredefinedStrategy(
