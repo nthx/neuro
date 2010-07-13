@@ -4,8 +4,8 @@ log = logging.getLogger(__name__)
 
 import random
 
-from model.ai import RandomStrategy, PredefinedStrategy
 from model.army import Army
+from model.strategy import RandomStrategy, PredefinedStrategy
 
 
 

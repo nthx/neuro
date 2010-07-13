@@ -3,7 +3,7 @@ import logging
 log = logging.getLogger(__name__)
 
 import random
-from model.ai import Strategy
+from model.strategy import Strategy
 
 
 class UIConsoleStrategy(Strategy):
