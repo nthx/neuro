@@ -18,6 +18,15 @@ class Hex(object):
         self.pawn_directions.append({'pawn':pawn, 'direction':direction})
       
         
+    def pawn(self):
+        if 0 == len(self.pawn_directions):
+            return None
+        elif 1 == len(self.pawn_directions):
+            return self.pawn_directions[0]['pawn']
+        else:
+            raise MoreFound()
+
+
     def clear(self):
         self.pawn_directions = []
         

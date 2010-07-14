@@ -6,6 +6,7 @@ from datetime import datetime as dt
 
 from model.army import Army, OUTPOST, BORGO, HEGEMONIA, MOLOCH
 from model.board import Board
+from model.exceptions import BattleStarts
 from model.player import HumanPlayer, ComputerPlayer
 
 
@@ -106,7 +107,7 @@ class Game(object):
         
 
     def battle(self):
-        raise Exception('not implemented')
+        raise BattleStarts()
             
             
         

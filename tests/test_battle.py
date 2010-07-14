@@ -4,7 +4,7 @@ from tests.base import *
 class Test(BaseTest):
     
     def test_00_battle_with_predefined_moves(self):
-        game = Game(print_graph=True)
+        game = Game(print_graph=False)
 
         game.add_player(ComputerPlayer('P-Engine', BORGO, 
             strategy = PredefinedStrategy(
@@ -37,9 +37,12 @@ class Test(BaseTest):
         #next turn should be battle by computer
         try:
             game.player_turn(computer)
-            self.fail('should have battle')
-        except:
+            self.fail("Battle should start")
+        except BattleStarts:
             pass
-        finally:
-            pass
+
+        #self.assertEqual(19, game.board.hex_with_player_hq(human).pawn().x_damage)
+        #game.get_battle_instructions()
+
+
     

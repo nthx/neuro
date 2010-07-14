@@ -12,7 +12,6 @@ from model.strategy import RandomStrategy, PredefinedStrategy
 
 
 class Player(object):
-    
     def __init__(self, name, army, strategy=None, board=None):
         self.name = name
         self.board = board
@@ -70,11 +69,11 @@ class Player(object):
         
             
     def is_human(self):
-        raise OverrideMethod('is_human')
+        return False
         
         
     def is_computer(self):
-        raise OverrideMethod('is_computer')
+        return False
         
         
     def __repr__(self):
@@ -83,7 +82,6 @@ class Player(object):
         
         
 class HumanPlayer(Player):
-    
     def __init__(self, name, army, strategy=RandomStrategy(), board=None):
         Player.__init__(self, name, army, strategy=strategy, board=board)
         if not strategy:
@@ -92,21 +90,12 @@ class HumanPlayer(Player):
 
     def is_human(self):
         return True
-        
-        
-    def is_computer(self):
-        return False
 
-
+        
         
 class ComputerPlayer(Player):
-
     def __init__(self, name, army, strategy=None, board=None):
         Player.__init__(self, name, army, strategy=strategy, board=board)
-    
-        
-    def is_human(self):
-        return False
     
         
     def is_computer(self):
